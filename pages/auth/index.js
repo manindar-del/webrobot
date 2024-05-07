@@ -6,6 +6,7 @@ import { regexFormat } from "../../components/RegexFormate/RegexFormate";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useRouter } from "next/router";
 
 
 
@@ -45,9 +46,9 @@ const index = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-
-
-
+  
+  const router = useRouter();
+  
 
 
 
@@ -60,8 +61,18 @@ const index = () => {
       return axios
         .post("/api/signin", data)
         .then((response) => {
-          console.log(response,"response")
-          router.push("/selfservicehome");
+         
+          if (response.status === 200) {
+          
+            // cookie.set("auth", response?.data[0], {
+            //   path: "/",
+            //   sameSite: true
+            //   //expires: date
+            // });
+            console.log(response?.data[0].email,"response")
+            localStorage.setItem('auth', JSON.stringify(response?.data[0].email));
+            router.push("/selfservicehome");
+          }
         })
         .catch((error) => {
           Swal.fire("Server Error.", "error");
@@ -69,15 +80,6 @@ const index = () => {
         });
     },
   });
-
-
-
-
-  
-
-
-
-
 
 
 

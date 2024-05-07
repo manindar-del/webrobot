@@ -13,6 +13,7 @@ import {
 } from "reactstrap";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 function InnerHeader(props) {
   // for add or remove class onm click
@@ -50,6 +51,12 @@ function InnerHeader(props) {
 
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
+  const router = useRouter();
+  const logout = () => {
+    localStorage.removeItem("auth");
+    router.push("/")
+    
+  }
 
   return (
     <>
@@ -215,7 +222,8 @@ function InnerHeader(props) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#0" className="topMenu">
+                  {/* <Link href="#0" className="topMenu"> */}
+                  <div  onClick={logout} >
                     <a>
                       <Image
                         width={30}
@@ -225,7 +233,8 @@ function InnerHeader(props) {
                       />
                       <span className={InnHeader.login_text}>LogOut</span>
                     </a>
-                  </Link>
+                    </div>
+                  {/* </Link> */}
                 </li>
               </ul>
               <span className={InnHeader.toggleGroup} onClick={navWrap}>
