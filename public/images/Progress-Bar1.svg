@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="392.64" height="5" viewBox="0 0 392.64 5">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-7.597" y1="-457" x2="-7.589" y2="-457" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2bd563"/>
+      <stop offset="1" stop-color="#0082d5"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path id="Filled1" d="M1737.825,2290H1543.075c-2.169,0-3.926-1.12-3.926-2.5,0-1.3,1.555-2.37,3.911-2.5h194.765c2.167,0,3.926,1.12,3.926,2.5C1741.751,2288.8,1740.2,2289.87,1737.825,2290Z" clip-rule="evenodd"/>
+    </clipPath>
+  </defs>
+  <g id="Progress-Bar--2" transform="translate(-1539.149 -2285)">
+    <g id="Base3">
+      <path id="Path_887" data-name="Path 887" d="M1931.789,2287.5a2.5,2.5,0,0,0-2.5-2.5H1541.649a2.5,2.5,0,1,0,0,5h387.643A2.5,2.5,0,0,0,1931.789,2287.5Z" fill="#374355" fill-rule="evenodd"/>
+      <path id="Path_888" data-name="Path 888" d="M1931.789,2287.5a2.5,2.5,0,0,0-2.5-2.5H1541.649a2.5,2.5,0,1,0,0,5h387.643A2.5,2.5,0,0,0,1931.789,2287.5Zm-1.005,0a1.5,1.5,0,0,1-1.492,1.5H1541.649a1.5,1.5,0,0,1,0-3h387.643A1.5,1.5,0,0,1,1930.784,2287.5Z" fill="#53657d" fill-rule="evenodd"/>
+    </g>
+    <path id="Filled" d="M1737.825,2290H1543.075c-2.169,0-3.926-1.12-3.926-2.5,0-1.3,1.555-2.37,3.911-2.5h194.765c2.167,0,3.926,1.12,3.926,2.5C1741.751,2288.8,1740.2,2289.87,1737.825,2290Z" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+    <g id="Group_963" data-name="Group 963" clip-path="url(#clip-path)">
+      <path id="Lines" d="M1564.278,2280h15.706l-23.558,15h-15.706Zm125.645,0h15.706l-23.558,15h-15.706Zm62.823,0h15.706l-23.558,15h-15.706Zm157.056,0h15.706l-23.558,15h-15.706Zm-314.112,0h15.706l-23.558,15H1572.13Zm219.878,0h15.706l-23.558,15h-15.706Zm-94.234,0h15.706l-23.558,15h-15.706Zm-94.234,0h15.706l-23.558,15h-15.706Zm157.056,0h15.706l-23.558,15H1760.6Zm62.822,0h15.706l-23.558,15H1823.42Zm-188.467,0h15.706l-23.558,15h-15.706Zm219.878,0H1894.1l-23.558,15h-15.706Z" fill="rgba(255,255,255,0.3)" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

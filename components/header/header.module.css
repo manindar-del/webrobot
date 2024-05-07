@@ -1,0 +1,43 @@
+.header{
+    position: relative;
+    background-color: #0082d5;
+    padding: 35px 15px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.header .logo {
+    text-align: center;
+}
+.header .header_right {
+    text-align: right;
+    position:absolute;
+    top:15px;
+    right: 25px;
+}
+.header .header_right li {
+    display: inline-block;
+    padding: 0 10px;
+}
+.header .header_right li a {
+    color: #fff;
+}
+
+@media screen and (max-width:991px) {
+    .logoImg {
+        width: 300px;
+    }
+    .header_right li a img {
+        width: 25px;
+    }
+}
+@media screen and (max-width:767px) {
+    .header {
+        padding: 35px 0 15px;
+    }
+    .logoImg {
+        width: 220px;
+    }
+    .header_right li a img {
+        width: 20px;
+    }
+}

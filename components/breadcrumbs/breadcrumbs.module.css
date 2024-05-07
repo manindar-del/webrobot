@@ -1,0 +1,115 @@
+.nav {
+  float: left;
+  padding: 25px 15px;
+}
+.nav .breadcrumb {
+  margin: 0;
+}
+/* .breadcrumb .breadcrumb-item:before {
+    display: none;
+} */
+.breadcrumb .breadcrumb-item {
+  position: relative;
+
+  color: #2b2b2b;
+  font-size: 18px;
+  padding: 6px 15px;
+}
+.breadcrumb .breadcrumb-item:nth-child(even) {
+  color: #fff;
+}
+.breadcrumb .breadcrumb-item:nth-child(odd) {
+  color: #2b2b2b;
+}
+.breadcrumb .breadcrumb-item:before {
+  /* position: absolute;
+    left: 0;
+    top: 0;
+    width: 0px;
+    height: 0px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid green; */
+  content: "";
+}
+
+.breadcrumb .breadcrumb-item:first-child {
+  background-color: #fff;
+  border-left: 2px solid #666;
+  left: -5px;
+  box-sizing: content-box;
+}
+
+.breadcrumb .breadcrumb-item {
+  margin-right: 10px;
+}
+
+.breadcrumb .breadcrumb-item {
+  display: inline-block;
+  position: relative;
+}
+.breadcrumb .breadcrumb-item:last-child a {
+  cursor: default;
+}
+.breadcrumb .breadcrumb-item::before,
+.breadcrumb .breadcrumb-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 56%;
+  width: 100%;
+  background: white;
+  border-left: 2px solid #0082d5;
+  border-right: 2px solid #0082d5;
+  z-index: -2;
+}
+.breadcrumb .breadcrumb-item::before {
+  top: -2px;
+  transform: skew(30deg);
+  border-top: 2px solid #0082d5;
+}
+.breadcrumb .breadcrumb-item::after {
+  bottom: -2px;
+  transform: skew(-30deg);
+  border-bottom: 2px solid #0082d5;
+}
+
+.breadcrumb .breadcrumb-item:first-child {
+  border-left: 2px solid #0082d5;
+  left: -5px;
+  box-sizing: content-box;
+}
+.breadcrumb .breadcrumb-item:first-child::before,
+.breadcrumb .breadcrumb-item:first-child::after {
+  left: 5px;
+}
+.breadcrumb .breadcrumb-item a {
+  text-decoration: none;
+}
+.breadcrumb .breadcrumb-item:nth-child(even):before,
+.breadcrumb .breadcrumb-item:nth-child(even):after {
+  background-color: #0082d5;
+}
+.breadcrumb .breadcrumb-item:nth-child(even) a {
+  color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .breadcrumb .breadcrumb-item {
+    margin-bottom: 15px;
+  }
+  .breadcrumb .breadcrumb-item {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .breadcrumb .breadcrumb-item {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .breadcrumb .breadcrumb-item {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+}

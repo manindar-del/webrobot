@@ -1,0 +1,366 @@
+.headerTwo {
+  position: relative;
+  background-color: #0082d5;
+  padding: 8px 15px 0;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  width: 100%;
+}
+.headerTwo .header_right {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+  margin-top: 12px;
+}
+.headerTwo .header_right li {
+  display: inline-block;
+  padding: 0 15px;
+  text-align: center;
+}
+.headerTwo .header_right li a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+}
+.headerTwo .header_right li a .login_text {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease 0.4s;
+  padding-top: 5px;
+}
+
+.headerTwo .header_right li a.active .login_text,
+.headerTwo .header_right li a:hover .login_text,
+.headerTwo .header_right li a:focus .login_text {
+  opacity: 1;
+  visibility: visible;
+  text-decoration: none;
+}
+.header_menu li {
+  display: inline-block;
+  text-align: center;
+}
+.header_menu li a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 3px;
+  position: relative;
+  bottom: -20px;
+}
+.header_menu li a img {
+  margin-bottom: 10px;
+}
+.header_menu li a .menu_name {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 10px;
+}
+.header_menu li a.active {
+  background-image: url("/images/shap1.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.header_menu li a .hover_img {
+  display: none;
+}
+.header_menu li a.active .default_img {
+  display: none;
+}
+.header_menu li a.active .hover_img {
+  display: inline-block;
+}
+.header_menu li a.active .menu_name {
+  color: #0082d5;
+}
+.count_wrap {
+  text-align: center;
+}
+.count_wrap li {
+  display: inline-block;
+  padding: 0 8px;
+}
+.count_wrap span {
+  color: #fff;
+  font-size: 16px;
+  font-family: "Calibri-Regular";
+}
+.count_wrap span.count {
+  font-size: 28px;
+  font-family: "Calibri-Bold";
+}
+.menu_close,
+.toggleIcon {
+  display: none;
+}
+.modalWrap.header_modal .modalTitle:before {
+  right: -130%;
+}
+.toggleGroup {
+  cursor: pointer;
+}
+.header_menu {
+  overflow: hidden;
+}
+.headerTwo .header_right li .close_icon,
+.header_menu li .close_icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 65px;
+  height: 35px;
+  text-align: center;
+  line-height: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.headerTwo .header_right li .close_icon:before,
+.headerTwo .header_right li .close_icon:after,
+.header_menu li .close_icon:before,
+.header_menu li .close_icon:after {
+  position: absolute;
+  top: -23px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  content: "";
+  -webkit-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  transition: all ease 0.4s;
+  z-index: 1;
+  cursor: pointer;
+}
+.headerTwo .header_right li .close_icon:before,
+.header_menu li .close_icon:before {
+  -webkit-transform: translateY(7px) rotateZ(-45deg);
+  -ms-transform: translateY(7px) rotateZ(-45deg);
+  transform: translateY(7px) rotateZ(-45deg);
+  top: 36px;
+}
+.headerTwo .header_right li .close_icon:after,
+.header_menu li .close_icon:after {
+  -webkit-transform: translateY(-7px) rotateZ(45deg);
+  -ms-transform: translateY(-7px) rotateZ(45deg);
+  transform: translateY(-7px) rotateZ(45deg);
+  top: 50px;
+}
+.headerTwo .header_right li.close_icon_block,
+.header_menu li.close_icon_block {
+  display: none;
+}
+
+@media screen and (max-width: 1320px) {
+  .count_wrap li .countIcon img {
+    width: 40px;
+  }
+  .count_wrap span.count {
+    font-size: 24px;
+  }
+  .headerTwo .header_right li {
+    padding: 0 10px;
+  }
+}
+@media screen and (max-width: 1270px) {
+  .count_wrap li {
+    padding: 0 5px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .headerTwo .header_right li {
+    padding: 0 5px;
+  }
+  .count_wrap li {
+    padding: 0 4px;
+  }
+  .count_wrap span {
+    font-size: 14px;
+  }
+  .count_wrap li .countIcon img {
+    width: 30px;
+  }
+  .count_wrap span.count {
+    font-size: 16px;
+  }
+  .loginWrap.style_two ul li a img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+  .loginWrap ul li .login_text {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .headerTwo .header_right li.close_icon_block {
+    display: inline-block;
+  }
+  .headerTwo .header_right ul {
+    display: none;
+  }
+  .headerTwo .toggleIcon {
+    display: inline-block;
+    width: 26px;
+    height: 2px;
+    margin-top: 25px;
+    background: #fff;
+    position: relative;
+    -webkit-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    transition: all ease 0.4s;
+    cursor: pointer;
+  }
+  .headerTwo .toggleIcon:before,
+  .headerTwo .toggleIcon:after {
+    position: absolute;
+    top: -7px;
+    left: 0;
+    width: 26px;
+    height: 2px;
+    background: #fff;
+    content: "";
+    -webkit-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    transition: all ease 0.4s;
+    z-index: 1;
+  }
+  .headerTwo .toggleIcon:after {
+    top: 7px;
+  }
+  .loginWrap.style_two ul li {
+    margin-bottom: 15px;
+  }
+  .loginWrap.style_two ul li a img {
+    width: 40px;
+    height: 40px;
+  }
+  .loginWrap ul li .login_text {
+    font-size: 22px;
+  }
+  .breadcrumb .breadcrumb-item {
+    font-size: 14px;
+  }
+  .headerTwo .header_right ul {
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    padding: 0;
+    background-color: #0082d5;
+    text-align: left;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-transition: all ease 0.7s;
+    -ms-transition: all ease 0.7s;
+    transition: all ease 0.7s;
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+    z-index: 999;
+  }
+  .navigation_open .headerTwo .header_right ul {
+    display: inline-block;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-box-shadow: 0 0 0.9375rem rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 0 0.9375rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 0.9375rem rgba(0, 0, 0, 0.15);
+  }
+  .headerTwo .header_right li {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+  }
+  .headerTwo .header_right li a {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header_menu li a img {
+    width: 30px;
+  }
+  .loginWrap.style_two ul li a img {
+    width: 30px;
+    height: 30px;
+  }
+  .loginWrap ul li .login_text {
+    font-size: 20px;
+  }
+  .breadcrumb .breadcrumb-item {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .header_menu li.close_icon_block {
+    display: inline-block;
+  }
+  .headerTwo .header_right {
+    margin-top: 0;
+  }
+  .header_menu ul {
+    display: none;
+  }
+  .headerTwo {
+    padding: 8px 15px 30px;
+  }
+  .menu_close {
+    display: inline-block;
+    position: relative;
+    padding: 6px 15px;
+    color: #0082d5;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+  .header_menu ul {
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    padding: 0;
+    background-color: #0082d5;
+    text-align: left;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-transition: all ease 0.7s;
+    -ms-transition: all ease 0.7s;
+    transition: all ease 0.7s;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    z-index: 999;
+  }
+  .fillter_open .header_menu ul {
+    display: inline-block;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-box-shadow: 0 0 0.9375rem rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 0 0.9375rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 0.9375rem rgba(0, 0, 0, 0.15);
+  }
+  .header_menu li a.active {
+    background-image: none;
+  }
+  .header_menu li a.active .default_img {
+    display: inline-block;
+  }
+  .header_menu li a.active .hover_img {
+    display: none;
+  }
+  .header_menu li a.active .menu_name {
+    color: #fff;
+  }
+}

@@ -1,0 +1,57 @@
+.rightContact {
+    overflow: hidden;
+    padding-left: 30px;
+}
+.project-items ul li {
+    display: inline-block;
+    width: 100%;
+    padding: 25px 0;
+}
+.project-items ul li .iconBlock {
+    float: left;
+}
+.project-items ul li h6, .project-items ul li h6 a {
+    font-size: 24px;
+    font-family: 'Arial-Bold';
+    padding-bottom: 10px;
+    text-decoration: none;
+    color: #2B2B2B;
+    cursor: pointer;
+}
+.project-items ul li p {
+    padding-bottom: 0;
+    font-size: 24px;
+}
+.project-empty-content {
+    padding: 0 80px;
+}
+
+
+@media screen and (max-width:767px) {
+    .project-empty-content {
+        padding: 0 15px;
+    }
+    .project-items ul li h6, .project-items ul li h6 a {
+        font-size: 20px;
+    }
+    .project-items ul li p {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:575px) {
+    .project-items ul li h6, .project-items ul li h6 a {
+        font-size: 18px;
+    }
+    .project-items ul li p {
+        font-size: 14px;
+    }
+    .project-items ul li .iconBlock {
+        float: none;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .rightContact {
+        padding-left: 0;
+    }
+}

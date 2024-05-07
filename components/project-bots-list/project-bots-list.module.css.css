@@ -1,0 +1,101 @@
+.project-items .item_info {
+  text-align: left;
+  padding-left: 15px;
+}
+.left_content-inner {
+  text-align: left;
+}
+.left_content-inner h6 {
+  padding-bottom: 5px;
+  font-family: "Arial-Bold";
+}
+.left_content-inner span {
+  color: #808080;
+}
+
+.cat-bot-list table tr td:nth-child(2) {
+  width: 540px;
+  text-align: left;
+}
+
+.processed-url-block .modal-header {
+  text-align: center;
+}
+.processed-url-block .modal-header .modal-title {
+  position: relative;
+}
+.processed-url-block .modal-header .modalTitle:before,
+.processed-url-block .modal-header .modalTitle:after {
+  width: 205px;
+  background-position: center center;
+}
+.processed-url-block .modal-header .modalTitle:after {
+  right: auto;
+  left: -100%;
+}
+.processed-url {
+  margin: 0 60px;
+  border: 1px solid #0082d5;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.processed-url span {
+  display: inline-block;
+  width: 100%;
+  background-color: #0082d5;
+  text-align: center;
+  color: #fff;
+  font-size: 21px;
+  font-family: "Arial-Regular";
+  padding: 10px 15px;
+  border-bottom-right-radius: 30px;
+}
+.all-url {
+  overflow-y: scroll;
+  height: 920px;
+  padding: 16px 13px 0;
+  scrollbar-color: #0082d5 #f0f0f0;
+  scrollbar-width: thin;
+  margin-bottom: 20px;
+}
+.all-url a {
+  display: inline-block;
+  width: 100%;
+  padding: 5px 0;
+  color: #000;
+  text-decoration: none;
+}
+.all-url a:hover,
+.all-url a:focus {
+  color: #0082d5;
+}
+.processed-url-block .btn_block {
+  padding-top: 50px;
+}
+.processed-url-block .btn_block .downloadIcon {
+  padding: 0;
+  border: none;
+  min-width: auto;
+}
+
+@media screen and (max-width: 991px) {
+  .processed-url-block .modal-header .modalTitle::after {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .processed-url {
+    margin: 0 30px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .processed-url {
+    margin: 0;
+  }
+  .processed-url-block .modal-header {
+    padding-bottom: 0;
+  }
+  .processed-url span {
+    font-size: 16px;
+  }
+}

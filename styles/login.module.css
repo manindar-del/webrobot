@@ -1,0 +1,143 @@
+.loginWrap {
+  padding: 140px;
+  margin: 0 auto;
+}
+.loginWrap ul {
+  margin-top: 130px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.loginWrap ul li {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+  text-align: center;
+}
+.loginWrap ul li .login_text {
+  display: inline-block;
+  width: 100%;
+  color: #0082d5;
+  font-size: 34px;
+  line-height: 39px;
+}
+.loginWrap ul li a {
+  color: #0082d5;
+  display: inline-block;
+}
+.loginWrap ul li a img {
+  margin-bottom: 20px;
+}
+.loginWrap h2 {
+  font-size: 30px;
+  font-family: "Arial-Bold";
+}
+
+.loginWrap h3 {
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.loginWrap.style_two ul li a img {
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 1366px) {
+  .headerTwo .header-right li {
+    padding: 0 10px;
+  }
+  .headerTwo .header-right li img {
+    width: 30px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .loginWrap ul li a svg {
+    width: 60px;
+  }
+  .loginWrap ul li .login_text {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .loginWrap {
+    padding: 60px 30px;
+  }
+
+  .loginWrap h2 {
+    font-size: 28px;
+  }
+  .loginWrap h3 {
+    font-size: 26px;
+  }
+  .loginWrap.style_two ul li {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .loginWrap {
+    padding: 40px 20px;
+  }
+  .loginWrap ul li .login_text {
+    font-size: 26px;
+    line-height: normal;
+  }
+  .loginWrap ul li a svg {
+    width: 50px;
+  }
+  .loginWrap h2 {
+    font-size: 26px;
+  }
+  .loginWrap h3 {
+    font-size: 24px;
+  }
+  .loginWrap ul li a img {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .loginWrap {
+    padding: 35px 15px;
+  }
+  .loginWrap ul li .login_text {
+    font-size: 22px;
+  }
+  .loginWrap ul li .login_text br {
+    display: none;
+  }
+  .loginWrap ul li a svg {
+    width: 50px;
+  }
+  .loginWrap h2 {
+    font-size: 22px;
+  }
+  .loginWrap h3 {
+    font-size: 20px;
+  }
+  .loginWrap ul {
+    margin-top: 30px;
+    padding: 10px;
+  }
+  .loginWrap ul li a img {
+    width: 30px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .loginWrap ul li a svg {
+    width: 30px;
+  }
+  .loginWrap ul li .login_text {
+    font-size: 16px;
+  }
+  .loginWrap h3 {
+    font-size: 18px;
+  }
+  .loginWrap ul li a img {
+    margin-bottom: 10px;
+  }
+}

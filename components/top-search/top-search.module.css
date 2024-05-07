@@ -1,0 +1,147 @@
+.project_search {
+  float: right;
+  padding: 15px;
+}
+.project_search ul li form {
+  position: relative;
+}
+.project_search ul li {
+  display: inline-block;
+  padding: 0 12px;
+}
+.project_search ul li a {
+  color: #0082d5;
+  display: inline-block;
+}
+.project_search ul li input {
+  min-width: 377px;
+  padding: 0 45px;
+  background-color: transparent;
+  border-color: rgba(128, 128, 128, 0.97);
+  border-radius: 15px;
+  font-size: 22px;
+}
+.project_search ul li .form-group {
+  position: relative;
+}
+.project_search ul li span {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 19px;
+  cursor: pointer;
+}
+.project_search ul li span.close_icon {
+  left: auto;
+  right: 13px;
+}
+.project_search ul li .form-control {
+  padding: 0 45px;
+  background-color: transparent;
+  border-color: rgba(128, 128, 128, 0.97);
+  border-radius: 15px;
+  font-size: 22px;
+}
+.existing_bot .sub_title {
+  color: #808080;
+  font-size: 20px;
+  font-family: "Arial-Regular";
+}
+.modalWrap.export_bots_datasets .btn_block a.style_two {
+  background-color: #0082d5;
+  border-color: #0082d5;
+}
+.export_bots_datasets .modalBodyContent h2 {
+  font-size: 18px;
+  font-family: "Arial-Bold";
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+.export_bots_datasets .modalBodyContent h2 img {
+  margin-right: 10px;
+  width: 29px;
+}
+.existing_bot.modalWrap .modalBodyContent .simpal_check label {
+  width: 100%;
+  text-align: left;
+}
+.existing_bot.modalWrap .modalBodyContent .simpal_check label input {
+  margin-left: 15px;
+}
+.e-multiselect {
+  border: none !important;
+}
+.e-multiselect .e-multi-select-wrapper {
+  box-shadow: none;
+  border: 1px solid #0082d5;
+  border-radius: 4px;
+  padding: 8px 8px 5px 8px !important;
+}
+@media screen and (max-width: 767px) {
+  .project_search ul li input {
+    min-width: auto;
+    width: 250px;
+  }
+  .newProject .newProjectWrap {
+    padding: 100px 15px 30px;
+  }
+  .newFile .input-text {
+    font-size: 22px;
+  }
+  .newProjectWrap h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .project_search ul li {
+    padding: 0 7px;
+  }
+  .project_search ul li a svg {
+    width: 28px;
+  }
+  .newFile .input-text {
+    font-size: 18px;
+  }
+  .newProjectWrap h3 {
+    font-size: 18px;
+  }
+  .project_search ul li a img {
+    width: 20px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .project_search ul li input {
+    min-width: auto;
+    max-width: 180px;
+  }
+  .project_search ul li a svg {
+    width: 18px;
+  }
+  .newProjectWrap h3 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 359px) {
+  .project_search ul li input {
+    max-width: 170px;
+  }
+}
+
+.searchInput .search_icon,
+.searchInput .close_icon {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 19px;
+  cursor: pointer;
+}
+
+.project_search ul li .form_control {
+  padding: 0 45px;
+  background-color: transparent;
+  border-color: rgba(128, 128, 128, 0.97);
+  border-radius: 15px;
+  font-size: 22px;
+}

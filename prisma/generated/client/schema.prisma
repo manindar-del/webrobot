@@ -1,0 +1,99 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int    @id @default(autoincrement())
+  name  String
+  email String @unique
+}
+
+model category {
+  id   Int    @id @default(autoincrement())
+  name String
+  job  job[]
+}
+
+model inputdataset {
+  id           Int                     @id @default(autoincrement())
+  sourceType   inputdataset_sourceType
+  location     String
+  dataFormat   inputdataset_dataFormat
+  jobtoproject jobtoproject[]
+}
+
+model job {
+  id           Int            @id @default(autoincrement())
+  name         String
+  description  String?
+  code         String?
+  creationDate DateTime       @default(now())
+  latestEdit   DateTime
+  categoryId   Int
+  category     category       @relation(fields: [categoryId], references: [id], map: "Job_categoryId_fkey")
+  jobtoproject jobtoproject[]
+
+  @@index([categoryId], map: "Job_categoryId_fkey")
+}
+
+model jobtoproject {
+  id             Int             @id @default(autoincrement())
+  jobId          Int
+  projectId      Int
+  inputDatasetId Int?
+  inputdataset   inputdataset?   @relation(fields: [inputDatasetId], references: [id], map: "JobToProject_inputDatasetId_fkey")
+  job            job             @relation(fields: [jobId], references: [id], map: "JobToProject_jobId_fkey")
+  project        project         @relation(fields: [projectId], references: [id], map: "JobToProject_projectId_fkey")
+  outputdataset  outputdataset[]
+
+  @@index([inputDatasetId], map: "JobToProject_inputDatasetId_fkey")
+  @@index([jobId], map: "JobToProject_jobId_fkey")
+  @@index([projectId], map: "JobToProject_projectId_fkey")
+}
+
+model outputdataset {
+  id               Int          @id @default(autoincrement())
+  creationDate     DateTime     @default(now())
+  updateDate       DateTime?
+  jobAssociationId Int
+  jobtoproject     jobtoproject @relation(fields: [jobAssociationId], references: [id], map: "OutputDataset_jobAssociationId_fkey")
+
+  @@index([jobAssociationId], map: "OutputDataset_jobAssociationId_fkey")
+}
+
+model project {
+  id           Int               @id @default(autoincrement())
+  name         String
+  description  String?
+  frequency    project_frequency
+  status       Int
+  startDate    DateTime?
+  endDate      DateTime?
+  jobtoproject jobtoproject[]
+}
+
+enum inputdataset_sourceType {
+  S3
+  GoogleStorage
+  HDFS
+  Streaming
+}
+
+enum inputdataset_dataFormat {
+  CSV
+  XML
+  OTHER
+}
+
+enum project_frequency {
+  DAILY
+  WEEKLY
+  MONTHLY
+  REAL_TIME
+}
