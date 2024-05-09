@@ -819,3 +819,277 @@ tr {
   text-decoration: none;
   color: darkblue;
 }
+
+
+#login-box {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 25px !important;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  -webkit-box-shadow: 0px 6px 30px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 6px 30px rgba(0,0,0,0.2);
+  box-shadow: 0px 6px 30px rgba(0,0,0,0.2);
+}
+
+.login-box-header {
+  background-color: rgb(255,255,255);
+  text-align: center;
+  padding-top: 18px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+}
+
+.login-box-header {
+  border: none;
+  border-bottom: 1px solid rgb(224,224,224);
+}
+
+.login-box-content {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  padding-top: 20px;
+}
+
+.social-login-link {
+  text-decoration: none;
+  color: white;
+  margin-top: 10px;
+}
+
+.fb-login {
+  border-color: #0d6efd;
+    border-radius: 20px;
+    background: rgba(26, 83, 138, 0);
+}
+
+.gp-login {
+  background-color: #db4437;
+  margin-top: 10px;
+}
+
+.login-box-content Button {
+  padding: 11px 0px 11px 15px;
+  color: #6c757d !important;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: 20px;
+  background: none !important;
+  border-color: transparent !important;
+  width: 90%;
+  border-radius: 25px !important;
+  display: flex;
+  margin: 0px auto;
+  margin-bottom: 15px;
+}
+.login-box-content Button i { margin-right: 20px;}
+.box-shadow {
+  box-shadow: 0 2px 2px 0 rgba(41,48,59,.24), 0 0 2px 0 rgba(41,48,59,.12);
+  border-radius: 20px;
+}
+
+.social-login-link:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.login-box-seperator {
+  flex: 1 0 auto;
+  min-width: 1px;
+  border-top: 1px solid #dedfe0;
+  height: 1px;
+}
+
+.email-imput {
+  border-radius: 5px;
+  color: #29303b;
+  font-size: 18px;
+  height: auto;
+  padding: 11px 10px 12px 40px;
+}
+
+.form-control {
+  box-shadow: none;
+  font-size: 16px;
+  padding: 10px 12px;
+  transition: border-color .08s ease-in-out,box-shadow .08s ease-in-out;
+}
+
+.email-login {
+  padding: 10px 20px;
+}
+
+#submit-id-submit {
+  margin-top: 0px;
+  height: 46px;
+  background-color: rgb(26,138,111);
+  border: 0;
+  color: rgb(255,255,255);
+  margin-bottom: 8px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.submit-row {
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.label-text {
+  color: #8b8b8b;
+}
+
+#forgot-password-link {
+  color: #2474c1;
+  text-decoration: none;
+}
+
+#login-box-footer {
+  text-align: center;
+  border-top: 1px solid #dedfe0;
+}
+
+#register-link {
+  color: #2474c1;
+  padding: 0px 10px;
+  text-decoration: none;
+}
+
+#login-box-footer p {
+  color: #8b8b8b;
+}
+
+#submit-id-submit:hover {
+  background-color: rgb(25,130,105);
+}
+.gradient-custom-2 {
+  background: #fccb90;
+  border: none;
+  background: linear-gradient(to right, #3470ff, #3168b9, #135bc7, #0d6efd);
+}
+.login-button:hover {
+  background: #fccb90;
+  border: none;
+}
+.text-white h4{
+  color: #fff !important;
+}
+.text-white p{
+  color: #fff !important;
+}
+.font-bold{
+  font-weight: bold;
+  color: #424672;
+}
+.email-width{
+  width: 100%;
+}
+.email-width label{ padding-left: 20px;}
+.email-width .MuiInputBase-root{
+  background: transparent;
+  color: #212529;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  padding-left: 20px;
+}
+.email-width .MuiInputBase-root::before{
+  display: none;
+}
+.or-text{
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 400;
+  color: rgb(201, 201, 201);
+}
+.facebook-icon-color{
+  color: #0082d5;
+}
+.gmail-icon-color{
+  color: rgb(219,68,55);
+}
+.login-button{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button.btn.cr-new {
+  border: 2px solid #ff349e;
+  color: #424672;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+}
+button.btn.cr-new:hover{
+  border: 2px solid #3470ff;
+  color:#fff;
+  background:#3470ff;
+}
+.my-2 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+
+.list-inline a {
+  color:#0d6efd;
+  text-decoration: underline;  
+}
+.link-secondary {
+  color: #6c757d !important;
+  font-size: 14px ;
+}
+.list-inline-item:not(:last-child) {
+  margin-right: 0.5rem;
+}
+.bottom-section a{
+font-size: 20px;
+}
+.bottom-section li{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.modalWrap .modalBodyContent .form-control.right-part {
+  width: calc(100% - 185px); border-radius: 5px;
+  }
+  .modalWrap .modalBodyContent label.left-text { width: 170px; margin-bottom: 0px;}
+  .scarperForm.scarperFormTwo .form_group.form_check .form-label {
+    width: auto;
+  }
+  .project-name-con{
+    display: flex;
+    align-items: center;
+  }
+  .project-name-con{
+    display: flex;
+    align-items: center;
+  }
+  .new-bg .modal-header{
+  padding: 40px;
+  padding-bottom: 0px;
+  }
+  .new-bg .modal-body{
+    padding: 40px;
+  }
+  .datepicker-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+  }
+
+  .datepicker-right .rmdp-input{
+    width: 120px;
+    }
+    .new-project-text-img{
+      display: flex;
+    }

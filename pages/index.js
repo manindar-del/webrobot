@@ -51,7 +51,7 @@ function Login(props) {
               </a>
             </li>
             <li>
-              <Link href="#">
+              <a href="/auth/signin">
                 <>
                   <Image
                     width={50}
@@ -61,7 +61,7 @@ function Login(props) {
                   />
                   <span className={Logcss.login_text}>Sign up</span>
                 </>
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

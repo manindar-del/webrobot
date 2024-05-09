@@ -2,20 +2,10 @@ import Logcss from "../../styles/login.module.css";
 import React from "react";
 import Link from "next/link";
 import InnerHeader from "../inner-header/InnerHeader";
-import { } from "reactstrap";
+import {} from "reactstrap";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 function SelfServiceHome(props) {
-  const router = useRouter();
-  const logout = () => {
-    localStorage.removeItem("auth");
-    router.push("/")
-    
-  }
-
- 
-
   return (
     <>
       <InnerHeader />
@@ -107,20 +97,17 @@ function SelfServiceHome(props) {
               </Link>
             </li>
             <li>
-
-              <div  onClick={logout} >
+              <Link href="/">
                 <a>
-                <img
-                  width={77}
-                  height={74}
-                  src={"/images/icon12.svg"}
-                  alt="Icon"
-                  style={{ display: "block" }}
-                />
-                <span className={Logcss.login_text}>LogOut</span>
+                  <Image
+                    width={77}
+                    height={74}
+                    src={"/images/icon12.svg"}
+                    alt="Icon"
+                  />
+                  <span className={Logcss.login_text}>LogOut</span>
                 </a>
-              </div>
-
+              </Link>
             </li>
           </ul>
         </div>

@@ -96,8 +96,8 @@ function NewProject(props) {
           <h3>You are almost done! Now create your ﬁrst extraction project.</h3>
           <Form>
             <FormGroup className={NewProjectCss.newFile}>
-              <Label for="file">
-                <span onClick={toggle}>
+              <Label for="file" className="mt-4" >
+                <span className="d-flex align-item-center" onClick={toggle}>
                   <span>
                     <Image
                       width={50}
@@ -115,7 +115,7 @@ function NewProject(props) {
         </div>
       </section>
 
-      <Modal isOpen={modal} toggle={toggle} className={"modalWrap new-project"}>
+      <Modal isOpen={modal} toggle={toggle} className={"modalWrap new-project new-bg"}>
         <ModalHeader>
           <span className={NewProjectCss.modalTitle}>
             New Extraction Project - Creation Panel
@@ -125,10 +125,10 @@ function NewProject(props) {
         <ModalBody>
           <div className={"modalBodyContent"}>
             <Form onSubmit={handleSubmit(onSubmit)}>
-              <FormGroup>
-                <Label>Project name:</Label>
+              <FormGroup className="project-name-con">
+                <Label className="left-text">Project name:</Label>
                 <input
-                  className="form-control"
+                  className="form-control right-part"
                   {...register("name")}
                   placeholder="Write your extration project name here"
                   type="text"
@@ -145,10 +145,10 @@ function NewProject(props) {
                   type="email"
                 /> */}
               </FormGroup>
-              <FormGroup>
-                <Label>Description:</Label>
+              <FormGroup className="project-name-con">
+                <Label className="left-text">Description:</Label>
                 <input
-                  className="form-control"
+                  className="form-control right-part"
                   {...register("description")}
                   placeholder="Write a brief description of your extration project here"
                   type="textarea"
@@ -177,15 +177,16 @@ function NewProject(props) {
                   />
                 </span>
               </FormGroup> */}
-              <FormGroup>
-                <div className={NewProjectCss.form_group_inner}>
-                  <Label>Extraction frequency:</Label>
+              <FormGroup >
+               <div className="project-name-con">
+                <div className={`${NewProjectCss.form_group_inner} mb-3 w-100`}>
+                  <Label className="left-text">Extraction frequency:</Label>
 
                   <select
                     {...register("frequency")}
                     id="exampleSelectMulti"
                     type="select"
-                    className="form-control"
+                    className="form-control right-part"
                   >
                     <option value="">--select--</option>
                     {/* <option>One-Time</option> */}
@@ -203,12 +204,17 @@ function NewProject(props) {
                     </p>
                   )}
                 </div>
-                <div className={NewProjectCss.form_group_inner}>
+                </div>
+                <div className={`${NewProjectCss.form_group_inner} mb-3 project-name-con`}>
+                <div className="row">
+                  <div className="col-sm-6">
                   <Label>
                     Schedule start and end date:
                     <span>(only start date for one-time extraction)</span>
                   </Label>
-                  <span className="date-picker">
+                  </div>
+                  <div className="col-sm-6">
+                  <span className="date-picker datepicker-right">
                     <Image
                       width={50}
                       height={50}
@@ -254,6 +260,10 @@ function NewProject(props) {
                       </p>
                     )}
                   </span>
+                  </div>
+                </div>
+                 
+                 
                 </div>
               </FormGroup>
               <div className={"btn_block"}>

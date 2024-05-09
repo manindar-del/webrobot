@@ -13,7 +13,6 @@ import {
 } from "reactstrap";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 function InnerHeader(props) {
   // for add or remove class onm click
@@ -51,12 +50,6 @@ function InnerHeader(props) {
 
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
-  const router = useRouter();
-  const logout = () => {
-    localStorage.removeItem("auth");
-    router.push("/")
-    
-  }
 
   return (
     <>
@@ -222,8 +215,7 @@ function InnerHeader(props) {
                   </Link>
                 </li>
                 <li>
-                  {/* <Link href="#0" className="topMenu"> */}
-                  <div  onClick={logout} >
+                  <Link href="#0" className="topMenu">
                     <a>
                       <Image
                         width={30}
@@ -233,8 +225,7 @@ function InnerHeader(props) {
                       />
                       <span className={InnHeader.login_text}>LogOut</span>
                     </a>
-                    </div>
-                  {/* </Link> */}
+                  </Link>
                 </li>
               </ul>
               <span className={InnHeader.toggleGroup} onClick={navWrap}>
@@ -261,13 +252,13 @@ function InnerHeader(props) {
                     alt="Icon"
                     className={InnHeader.default_img}
                   />
-                  <Image
+                  {/* <Image
                     width={40}
                     height={40}
                     src={"/images/icon17-hover.svg"}
                     alt="Icon"
                     className={InnHeader.hover_img}
-                  />
+                  /> */}
                   <span className={InnHeader.menu_name}>Projects</span>
                 </a>
               </Link>
@@ -282,13 +273,13 @@ function InnerHeader(props) {
                     alt="Icon"
                     className={InnHeader.default_img}
                   />
-                  <Image
+                  {/* <Image
                     width={40}
                     height={40}
                     src={"/images/icon18-hover.svg"}
                     alt="Icon"
                     className={InnHeader.hover_img}
-                  />
+                  /> */}
                   <span className={InnHeader.menu_name}>New Project</span>
                 </a>
               </Link>
@@ -303,13 +294,13 @@ function InnerHeader(props) {
                     alt="Icon"
                     className={InnHeader.default_img}
                   />
-                  <Image
+                  {/* <Image
                     width={40}
                     height={40}
                     src={"/images/icon19-hover.svg"}
                     alt="Icon"
                     className={InnHeader.hover_img}
-                  />
+                  /> */}
                   <span className={InnHeader.menu_name}>Scraper</span>
                 </a>
               </Link>
@@ -328,13 +319,13 @@ function InnerHeader(props) {
                     alt="Icon"
                     className={InnHeader.default_img}
                   />
-                  <Image
+                  {/* <Image
                     width={40}
                     height={40}
                     src={"/images/icon20-hover.svg"}
                     alt="Icon"
                     className={InnHeader.hover_img}
-                  />
+                  /> */}
                   <span className={InnHeader.menu_name}>New Category</span>
                 </a>
               </Link>
@@ -362,13 +353,13 @@ function InnerHeader(props) {
                     alt="Icon"
                     className={InnHeader.default_img}
                   />
-                  <Image
+                  {/* <Image
                     width={40}
                     height={40}
                     src={"/images/icon21-hover.svg"}
                     alt="Icon"
                     className={InnHeader.hover_img}
-                  />
+                  /> */}
                   <span className={InnHeader.menu_name}>New Scraper</span>
                 </a>
               </Link>

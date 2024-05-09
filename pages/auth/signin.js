@@ -12,10 +12,18 @@ import { Button } from "reactstrap";
 import TextField from '@mui/material/TextField';
 import GoogleIcon from '@mui/icons-material/Google';
 import Image from "next/image";
-import { useRouter } from "next/router";
+import signin from "./siginBackup";
+import Checkbox from '@mui/material/Checkbox';
+import Link from "next/link";
 
 const schema = yup.object().shape({
-  email: yup
+  text: yup
+    .string()
+    .trim()
+    .required("User Name is required")
+    .email("Email format is not correct")
+
+  , email: yup
     .string()
     .trim()
     .required("Email Address is required")
@@ -26,6 +34,10 @@ const schema = yup.object().shape({
     .string()
     .trim()
     .required("Password is required"),
+    ConfirmPassword: yup
+    .string()
+    .trim()
+    .required("Confirm Password is required"),
 });
 
 
@@ -35,10 +47,10 @@ const schema = yup.object().shape({
 
 
 
+const signinnew = () => {
 
-const index = () => {
 
-
+  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
 
@@ -78,7 +90,6 @@ const index = () => {
 
 
 
-  const router = useRouter();
 
 
 
@@ -96,10 +107,10 @@ const index = () => {
           <section className="h-100 gradient-form" >
             <div className="container py-5 h-100">
               <div className="row d-flex justify-content-center align-items-center h-100">
-                <div className="col-xl-10">
+                <div className="col-xl-6">
                   <div className="card text-black rounded-3">
                     <div className="row g-0">
-                      <div className="col-lg-6">
+                      <div className="col-lg-12">
                         <div className="card-body p-md-5 mx-md-4">
                           <div className="text-center" >
                           <a href="/" className='cursor-pointer'><Image
@@ -110,30 +121,30 @@ const index = () => {
                             /></a>  
                           </div>
                           <form>
-                            <h5 className="font-bold mt-4">Please log in to your account</h5>
+                            <h5 className="font-bold mt-4">Create your account
 
-                            <div className="login-box-content">
-                              <Button className="fb-login box-shadow" variant="text">
-                                <i><FacebookIcon className="facebook-icon-color" /></i> Log in with Facebook </Button>
+                            </h5>
+                            <div className="form-outline mb-4">
+                              <div>
+                                <TextField id="filled-basic" label="User Name" variant="filled" type="text"
+                                  className="email-width"
+                                  {...register("text")} />
 
-                              <div className="mt-2" >
-                                <Button className="fb-login box-shadow" variant="text">
-                                  <i><GoogleIcon className="gmail-icon-color" /></i>  Log in with Google </Button>
+
                               </div>
-                             
-                            </div>
-                            <div className="d-flex flex-row align-items-center login-box-seperator-container" >
-                              <div className="login-box-seperator"></div>
-                              <div className="login-box-seperator-text">
-                                <p className="or-text">or</p>
-                              </div>
-                              <div className="login-box-seperator"></div>
+                              {errors?.text && (
+                                <span style={{ color: "red" }}>
+                                  {errors?.text?.message}
+                                </span>
+                              )}
+
+
                             </div>
                             <div className="form-outline mb-4">
                               <div>
                                 {/* <label htmlFor="email">Email:</label> */}
-                                <TextField id="filled-basic" label="User Name" variant="filled" type="email"
-                                  className="email-width"
+                                <TextField id="filled-basic" label="Email" variant="filled" type="email"
+                                  id="email" className="email-width"
                                   {...register("email")} />
 
                                 {/* <input
@@ -149,43 +160,76 @@ const index = () => {
                               )}
                             </div>
                             <div className="form-outline mb-4">
-                              <div>
-                                {/* <label htmlFor="password">Password:</label> */}
-                                {/* <input
-          type="password"
-          id="password"
-          {...register("password")}
-        /> */}
-                                <TextField id="filled-basic" label="Password" variant="filled" className="email-width" type="password"
-                                  {...register("password")} />
 
-                              </div>
+                              <TextField id="filled-basic" label="Password" variant="filled" className="email-width" type="password"
+                                {...register("password")} />
+
                               {errors?.password && (
                                 <span style={{ color: "red" }}>
                                   {errors?.password?.message}
                                 </span>
                               )}
                             </div>
-                            <div className="text-center pt-1 mb-5 pb-1"><a className="btn btn-primary fa-lg gradient-custom-2 mb-3 w-100 login-button" role="button" onClick={handleSubmit(onSubmit)} >LOG IN</a>
-                              <a className="text-muted" href="#">Forgot password?</a></div>
-                            <div className="d-flex justify-content-center align-items-center pb-4" >
-                              <p className="mb-0 me-2 pb-0">Don't have an account?</p>
-                              <button className="btn cr-new" type="button" onClick={() => {
-                                router.push("auth/signin");
-                              }}>REGISTER</button>
+
+                            <div className="form-outline mb-4">
+                              <TextField id="filled-basic" label="Confirm Password" variant="filled" className="email-width" type="password"
+                                {...register("password")} />
+
+                              {errors?.ConfirmPassword && (
+                                <span style={{ color: "red" }}>
+                                  {errors?.ConfirmPassword?.message}
+                                </span>
+                              )}
                             </div>
+                            <div className="text-center pt-1 mb-1 pb-1"><a className="btn btn-primary fa-lg gradient-custom-2 mb-3 w-100 login-button" role="button" onClick={handleSubmit(onSubmit)} >Register</a>
+                            </div>
+                            <div className="d-flex flex-row align-items-center login-box-seperator-container" >
+                              <div className="login-box-seperator"></div>
+                              <div className="login-box-seperator-text">
+                                <p className="or-text">or</p>
+                              </div>
+                              <div className="login-box-seperator"></div>
+                            </div>
+                            <div className="form-outline mb-4">
+                              <div>
+                                <div className="login-box-content">
+                                  <Button className="fb-login box-shadow" variant="text">
+                                    <i><FacebookIcon className="facebook-icon-color" /></i> Log in with Facebook </Button>
+
+                                  <div className="mt-2" >
+                                    <Button className="fb-login box-shadow" variant="text">
+                                      <i><GoogleIcon className="gmail-icon-color" /></i>  Log in with Google </Button>
+                                  </div>
+                                  {/* <div className="mt-2" >
+                                    <Button className="fb-login box-shadow" variant="text">
+                                      <i>  <Image
+                                        width={20}
+                                        height={22}
+                                        src={"/images/amazone-icon.jpg"}
+                                        alt="Logo"
+                                      /></i>  Log in with Amazon </Button>
+                                  </div> */}
+
+
+
+                                </div>
+                                <div className="mt-2 mb-2">
+                                <p className="text-muted text-center d-flex justify-content-center align-items-center" >
+                                <Checkbox {...label} />
+
+                                  I consent to the processing of my personal data
+</p>
+                                </div>
+                              
+</div>
+                              <div className="d-flex justify-content-center align-items-center pb-4" >
+                                <p className="mb-0 me-2 pb-0">Don't have an account?</p>
+                                <button className="btn cr-new" type="button">Login</button>
+                              </div></div>
                           </form>
                         </div>
                       </div>
-                      <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
-                        <div className="text-white px-3 py-4 p-md-5 mx-md-4">
-                          <h4 className="mb-4"><span >"Unlock Limitless Possibilities: Register Today!"</span></h4>
-                          <p className="mb-0"><strong>Effortless Deployment and Setup</strong></p>
-                          <p>Utilize configuration templates and deployment guides for a swift start-up process.</p>
-                          <p className="mb-0"><strong>Exceptional Round-the-Clock Customer Support</strong></p>
-                          <p>Enjoy our acclaimed technical assistance available 24/7 throughout your trial period.</p>
-                        </div>
-                      </div>
+                    
                     </div>
                   </div>
                 </div>
@@ -252,4 +296,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default signinnew;
