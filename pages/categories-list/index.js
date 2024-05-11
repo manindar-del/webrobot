@@ -17,6 +17,7 @@ function index() {
     isLoading,
     error,
     data: catData,
+    refetch,
   } = useQuery({
     queryKey: ["catData"],
     queryFn: getCatData,
@@ -32,7 +33,7 @@ function index() {
 
   return (
     <div>
-      <CatList catData={catData} />
+      <CatList catData={catData} refetch={refetch} />
     </div>
   );
 }

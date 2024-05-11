@@ -16,12 +16,24 @@ import Image from "next/image";
 import axios from "axios";
 import PaginationWork from "../pagination/PaginationWork";
 
-function CatList({ catData }) {
+function CatList({ catData, refetch }) {
   const [changeCatData, setChangeCatData] = useState(catData);
   const data = changeCatData;
-  const dataLimit = 2;
+  const dataLimit = 1;
   const [returnPagiantionResponseData, setReturnPagiantionResponseData] =
-    useState(catData);
+    useState([]);
+    console.log(catData,returnPagiantionResponseData,"catData")
+
+
+    useEffect(() => {
+      fetchData();
+      getPaginatedData();
+    }, []);
+  
+    const fetchData =  () => {
+        setReturnPagiantionResponseData(catData);
+      } 
+  
 
   const getPaginatedData = (data) => {
     console.log(data, "testing");
@@ -58,10 +70,16 @@ function CatList({ catData }) {
       .delete(`/api/category`, {
         data: { id: id },
       })
+      
       .then((response) => {
         // Handle success
+        console.log(response,"response")
+        if(response.status === 204){
         Swal.fire("Deleted!", "Your item has been deleted.", "success");
-        getCatData();
+        const updatedCatData = catData.filter(category => category.id !== id);
+        setReturnPagiantionResponseData(updatedCatData);
+        refetch();
+        }
       })
       .catch((error) => {
         // Handle error
@@ -69,9 +87,7 @@ function CatList({ catData }) {
       });
   };
 
-  useEffect(() => {
-    getCatData();
-  }, []);
+ 
 
   return (
     <>

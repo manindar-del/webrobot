@@ -75,7 +75,9 @@ export default async function handler(req, res) {
       await prisma.$disconnect();
     }
   } else if (req.method === "DELETE") {
+
     const { id } = req.body;
+
     try {
       await prisma.category.delete({ where: { id } });
       res.status(204).end();
@@ -84,6 +86,7 @@ export default async function handler(req, res) {
     } finally {
       await prisma.$disconnect();
     }
+  
   } else {
     res.status(405).json({ error: "Method not allowed" });
   }
