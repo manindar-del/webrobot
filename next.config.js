@@ -1,8 +1,45 @@
-const path = require("path");
 
-module.exports = {
+/** @type {import('next').NextConfig} */
+const withPWA = require("next-pwa");
+const path = require("path");
+const runtimeCaching = require("next-pwa/cache");
+
+module.exports = withPWA({
+  pwa: {
+    dest: "public",
+    register: true,
+    skipWaiting: true,
+    runtimeCaching,
+    disable: false
+  },
+  reactStrictMode: true,
+  trailingSlash: true,
   sassOptions: {
-    includePaths: [path.join(__dirname, "styles")],
+    includePaths: [path.join(__dirname, "styles")]
+  },
+  images: {
+    domains: [
+      "fakestoreapi.com",
+      "api.lorem.space",
+      "picsum.photos",
+      "placeimg.com",
+      "encrypted-tbn0.gstatic.com",
+      
+    ]
+  },
+  eslint: {
+    ignoreDuringBuilds: true
+  },
+  productionBrowserSourceMaps: true,
+  swcMinify: false,
+  compress: true,
+  optimizeFonts: true,
+  devIndicators: {
+    autoPrerender: false,
+    buildActivityPosition: "bottom-right"
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production"
   },
   plugins: {
     "postcss-modules": {
@@ -18,4 +55,17 @@ module.exports = {
     },
     // Altri plugin PostCSS che potresti utilizzare
   },
-};
+  env: {
+    //NEXT_APP_BASE_URL: process.env.NEXT_APP_BASE_URL,
+    
+  }
+});
+
+
+
+
+
+
+
+
+
