@@ -15,6 +15,7 @@ import Image from "next/image";
 import signin from "./siginBackup";
 import Checkbox from "@mui/material/Checkbox";
 import Link from "next/link";
+import { useGoogleLogin } from "@react-oauth/google";
 
 const schema = yup.object().shape({
   name: yup.string().trim().required("User Name is required"),
@@ -63,6 +64,43 @@ const signinnew = () => {
         });
     },
   });
+
+  const login = useGoogleLogin({
+    
+    onSuccess: async (respose) => {
+      console.log(respose, "respose");
+
+      try {
+        const res = await axios.get(
+          "https://www.googleapis.com/oauth2/v3/userinfo",
+          {
+            headers: {
+              Authorization: `Bearer ${respose.access_token}`,
+            },
+          }
+        );
+
+        // loginSocial({
+        //   first_name: res?.data?.given_name,
+        //   last_name: res?.data?.family_name,
+        //   email: res?.data?.email,
+        //   social_id: res?.data?.sub,
+        //   register_type: "google",
+        //   deviceToken:
+        //   res.token,
+        //   deviceType: "web",
+        // });
+
+        Cookies.set('user', JSON.stringify(res.data));
+        //console.log(res.data, "resttt");
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  });
+
+
+
 
   return (
     <>
@@ -118,11 +156,7 @@ const signinnew = () => {
                                   {...register("email")}
                                 />
 
-                                {/* <input
-          type="email"
-          id="email"
-          {...register("email")}
-        /> */}
+            
                               </div>
                               {errors?.email && (
                                 <span style={{ color: "red" }}>
@@ -196,6 +230,7 @@ const signinnew = () => {
                                     <Button
                                       className="fb-login box-shadow"
                                       variant="text"
+                                      onClick={() => login()}
                                     >
                                       <i>
                                         <GoogleIcon className="gmail-icon-color" />

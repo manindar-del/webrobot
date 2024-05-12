@@ -13,6 +13,8 @@ import TextField from '@mui/material/TextField';
 import GoogleIcon from '@mui/icons-material/Google';
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useGoogleLogin } from "@react-oauth/google";
+import Cookies from 'js-cookie';
 
 const schema = yup.object().shape({
   email: yup
@@ -84,6 +86,39 @@ const index = () => {
 
 
 
+  const login = useGoogleLogin({
+    
+    onSuccess: async (respose) => {
+      console.log(respose, "respose");
+
+      try {
+        const res = await axios.get(
+          "https://www.googleapis.com/oauth2/v3/userinfo",
+          {
+            headers: {
+              Authorization: `Bearer ${respose.access_token}`,
+            },
+          }
+        );
+
+        // loginSocial({
+        //   first_name: res?.data?.given_name,
+        //   last_name: res?.data?.family_name,
+        //   email: res?.data?.email,
+        //   social_id: res?.data?.sub,
+        //   register_type: "google",
+        //   deviceToken:
+        //   res.token,
+        //   deviceType: "web",
+        // });
+
+        Cookies.set('user', JSON.stringify(res.data));
+        //console.log(res.data, "resttt");
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  });
 
 
 
@@ -116,8 +151,8 @@ const index = () => {
                               <Button className="fb-login box-shadow" variant="text">
                                 <i><FacebookIcon className="facebook-icon-color" /></i> Log in with Facebook </Button>
 
-                              <div className="mt-2" >
-                                <Button className="fb-login box-shadow" variant="text">
+                              <div   className="mt-2" >
+                                <Button onClick={() => login()} className="fb-login box-shadow" variant="text">
                                   <i><GoogleIcon className="gmail-icon-color" /></i>  Log in with Google </Button>
                               </div>
                              

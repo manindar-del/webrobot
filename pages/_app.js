@@ -11,6 +11,7 @@ import { store } from "../redux-toolkit/store/store";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/globals.css";
 import { setContext } from "../api/axiosInstance";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,6 +36,7 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router.events]);
   return (
+    <GoogleOAuthProvider clientId="3198642219-8fghcdvcg3fgd712oopr18337oijtr9t.apps.googleusercontent.com">
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
@@ -44,6 +46,7 @@ function MyApp({ Component, pageProps }) {
         </Hydrate>
       </QueryClientProvider>
     </Provider>
+    </GoogleOAuthProvider>
   );
 }
 
