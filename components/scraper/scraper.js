@@ -148,8 +148,8 @@ function Scraper(props) {
         <ModalBody>
           <div className="modalBodyContent">
             <Form onSubmit={handleSubmit(onSubmit)}>
-              <FormGroup>
-                <Label>Name:</Label>
+              <FormGroup className="project-name-con">
+                <Label className="left-text">Name:</Label>
                 <input
                   className="form-control"
                   placeholder="Write your category name here"
@@ -165,8 +165,8 @@ function Scraper(props) {
                   </p>
                 )}
               </FormGroup>
-              <FormGroup>
-                <Label>New Script Description:</Label>
+              <FormGroup className="project-name-con">
+                <Label className="left-text">New Script Description:</Label>
                 {/* <Input
                   placeholder="Write your category name here"
                   type="text"
@@ -186,17 +186,19 @@ function Scraper(props) {
                   </p>
                 )}
               </FormGroup>
-              <FormGroup>
-                <Label>New Script Code:</Label>
+              <FormGroup className="project-name-con">
+                <Label className="left-text">New Script Code:</Label>
+                <span className="new-script">
                 <AceEditor
                   mode="javascript"
                   theme="github"
                   onChange={onChange}
                   name="code"
+                   
                   editorProps={{
                     $blockScrolling: true,
                   }}
-                />
+                /></span>
                 {errors?.code && (
                   <p>
                     <span style={{ color: "red" }}>
@@ -205,12 +207,17 @@ function Scraper(props) {
                   </p>
                 )}
               </FormGroup>
-              <FormGroup>
-                <Label>
+              <FormGroup className="project-name-con1">
+                <div className="row">
+                <div className="col-sm-6">
+                <Label className="left-text">
                   Schedule start and end date:
                   <span>(only start date for one-time extraction)</span>
                 </Label>
-                <span className="date-picker">
+                </div>
+                <div className="col-sm-6">
+  
+                <span className="date-picker datepicker-right pr-2">
                   <Image
                     width={50}
                     height={50}
@@ -256,6 +263,11 @@ function Scraper(props) {
                     </p>
                   )}
                 </span>
+                </div>
+
+
+                </div>
+             
               </FormGroup>
               {/* <FormGroup>
                 <Label>Description:</Label>

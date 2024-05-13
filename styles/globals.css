@@ -1093,3 +1093,42 @@ font-size: 20px;
     .new-project-text-img{
       display: flex;
     }
+
+    .new-script textarea{
+      height: 110px !important;
+      resize: none;
+      background-color: #fff;
+      color: #808080;
+      font-size: 13px;
+      border: 1px solid #9dcfef !important;
+      border-radius: 5px;
+      padding:10px;
+    
+    }
+.new-script{
+  width: calc(100% - 205px)!important;
+ 
+}
+    .new-script .ace_content{
+      height: 110px !important;
+      
+    }
+    .ace-tm{
+      height: 110px !important;
+      width: 100% !important;
+      background-color: #fff;
+      color: #808080;
+      font-size: 13px;
+      border: 1px solid #9dcfef !important;
+      border-radius: 5px;
+      padding: 15px;
+    }
+    .pr-2{
+      padding-right: 25px;
+    }
+    .category-board{
+      display: flex;
+      justify-content: center;
+    }
+    .category-board div{ padding-right: 10px;}
+    .category-board div img:hover{ opacity: 0.5;}

@@ -27,7 +27,7 @@ function CategoryBotsList({ singleData }) {
               style={{
                 paddingLeft: "20px",
                 paddingRight: "10px",
-                width: "95%",
+                width: "100%",
               }}
             >
               <thead>
@@ -55,7 +55,7 @@ function CategoryBotsList({ singleData }) {
                     <span>Not associated</span>
                   </td>
                   <td>
-                    <div className="action_group">
+                    <div className="action_group category-board">
                       <Link href="/#0">
                         <Image
                           width={50}
