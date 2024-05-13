@@ -16,6 +16,7 @@ import { useRouter } from "next/router";
 import { useGoogleLogin } from "@react-oauth/google";
 import Cookies from 'js-cookie';
 
+
 const schema = yup.object().shape({
   email: yup
     .string()
@@ -54,9 +55,7 @@ const index = () => {
     resolver: yupResolver(schema),
   });
 
-
-
-
+  const router = useRouter();
 
 
   const onSubmit = async (data) => {
@@ -68,7 +67,13 @@ const index = () => {
       return axios
         .post("/api/signin", data)
         .then((response) => {
-          console.log(response, "response")
+          if (response.status === 200) {
+
+            // localStorage.setItem('auth', JSON.stringify(response?.data[0].email));
+            Cookies.set('auth',  response?.data[0].email,{ path: "/",
+            sameSite: true });
+            
+          }
           router.push("/selfservicehome");
         })
         .catch((error) => {
@@ -80,7 +85,6 @@ const index = () => {
 
 
 
-  const router = useRouter();
 
 
 

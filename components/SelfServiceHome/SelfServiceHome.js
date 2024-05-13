@@ -4,8 +4,17 @@ import Link from "next/link";
 import InnerHeader from "../inner-header/InnerHeader";
 import {} from "reactstrap";
 import Image from "next/image";
+import Cookies from 'js-cookie';
+import { useRouter } from "next/router";
 
 function SelfServiceHome(props) {
+  const router = useRouter();
+
+  const logout = () => {
+    Cookies.remove('auth')
+    router.push("/")
+    
+  }
   return (
     <>
       <InnerHeader />
@@ -97,17 +106,19 @@ function SelfServiceHome(props) {
               </Link>
             </li>
             <li>
-              <Link href="/">
+            <div  onClick={logout} >
                 <a>
-                  <Image
-                    width={77}
-                    height={74}
-                    src={"/images/icon12.svg"}
-                    alt="Icon"
-                  />
-                  <span className={Logcss.login_text}>LogOut</span>
+                <img
+                  width={77}
+                  height={74}
+                  src={"/images/icon12.svg"}
+                  alt="Icon"
+                  style={{ display: "block" }}
+                />
+                <span className={Logcss.login_text}>LogOut</span>
                 </a>
-              </Link>
+              </div>
+
             </li>
           </ul>
         </div>

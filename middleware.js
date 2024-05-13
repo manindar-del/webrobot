@@ -3,6 +3,7 @@
 import cors from "cors";
 import bodyParser from "body-parser";
 import { NextRequest, NextResponse } from "next/server";
+
 export const corsMiddleware = cors();
 export const jsonParser = bodyParser.json();
 
@@ -11,7 +12,9 @@ export const jsonParser = bodyParser.json();
 
 export function middleware(request) {
    
-    const authData = JSON.parse(localStorage.getItem('auth'));
+    // const authData = JSON.parse(localStorage.getItem('auth'));
+    const authData = request.Cookies.get('auth').value;
+    console.log(authData, request,"authData")
     const email = authData;
     console.log(email,"emailemail")
 
@@ -29,5 +32,6 @@ export function middleware(request) {
 export const config = {
     matcher: [
         "/selfservicehome/",
+        "/project/",
     ]
 };
